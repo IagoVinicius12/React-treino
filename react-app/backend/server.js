@@ -1,31 +1,29 @@
-// server.js
 
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 
-// Middlewares
 app.use(cors());
 app.use(bodyParser.json());
 
-// Simulação de um banco de dados (JSON)
+
 let tasks = [];
-// Rotas
+
 app.get('/tasks', (req, res) => {
   res.json(tasks);
 });
 
 app.post('/tasks', (req, res) => {
     const newTask = req.body;
-    newTask.id = tasks.length + 1; // Simplesmente incrementando o ID
+    newTask.id = tasks.length + 1; 
     tasks.push(newTask);
     res.json({ message: 'Task added successfully', task: newTask });
 });
 
 app.delete('/tasks/:id', (req, res) => {
     const { id } = req.params;
-    const taskId = parseInt(id, 10); // Converte o ID da URL para um número
+    const taskId = parseInt(id, 10);
     tasks = tasks.filter(task => task.id !== taskId);
     res.json(tasks);
   });  
