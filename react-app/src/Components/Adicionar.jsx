@@ -16,18 +16,12 @@ const Adicionar = () => {
             });
 
             if (resposta.ok) {
-                // Tarefa adicionada com sucesso
                 const tasksdata = await resposta.json();
                 setTasks(tasksdata)
-                console.log(tasksdata) // Extrai o conteúdo JSON da resposta
-                // Mostra as tarefas no console
-                // Atualizar o estado ou fazer outra ação, se necessário
             } else {
-                // Lida com erros de requisição
                 console.error('Failed to add task');
             }
         } catch (error) {
-            // Lida com erros durante a requisição
             console.error('Error:', error);
         }
     };
@@ -42,23 +36,17 @@ const Adicionar = () => {
             });
 
             if (response.ok) {
-                // Tarefa adicionada com sucesso
                 console.log('Task added successfully');
-                // Atualizar o estado ou fazer outra ação, se necessário
             } else {
-                // Lida com erros de requisição
                 console.error('Failed to add task');
             }
         } catch (error) {
-            // Lida com erros durante a requisição
             console.error('Error:', error);
         }
     };
 
     const handleSubmit = () => {
-        // Chama a função addTask passando os dados da nova tarefa
         addTask({ description: tarefa, completed: false });
-        // Limpa o campo após adicionar a tarefa
         setTarefa('');
     };
     return (
