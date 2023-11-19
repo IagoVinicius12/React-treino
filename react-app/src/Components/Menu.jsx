@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+//reaproveitei este componente
 function Menu(props) {
   const [mostrarInputs, setMostrarInputs] = useState(false);
   const [home, setHome]=useState(false);
