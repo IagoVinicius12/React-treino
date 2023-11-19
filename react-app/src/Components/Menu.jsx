@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import reacticon from './reacticon.png';
-// import Inputs from './Inputs';
-// import Home from './Home';
 
 function Menu(props) {
   const [mostrarInputs, setMostrarInputs] = useState(false);
@@ -32,8 +29,6 @@ function Menu(props) {
           </Nav>
         </Container>
       </Navbar>
-      {/* {mostrarInputs && <Inputs inputQuestion={props.inputQuestion} setInputQuestion={props.setInputQuestion} handleQuestionRequest={props.handleQuestionRequest} response={props.response}/>}
-      {home && <Home/>} */}
     </>
   );
 }
